@@ -189,18 +189,18 @@ metadata:
 spec:
   replicas: 1
   selector:
-      matchLabels:
+    matchLabels:
       app: spa-dark
   template:
-      metadata:
+    metadata:
       labels:
-          app: spa-dark
-      spec:
+        app: spa-dark
+    spec:
       containers:
-          - name: spa-dark
-            image: ghcr.io/f5devcentral/spa-demo-app-spa:sha-c02c49a
-            ports:
-              - containerPort: 80
+        - name: spa-dark
+          image: ghcr.io/f5devcentral/spa-demo-app-spa:sha-c02c49a
+          ports:
+            - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
@@ -208,9 +208,9 @@ metadata:
   name: spa-dark
 spec:
   ports:
-      - port: 80
-        targetPort: 80
-        protocol: TCP
-        name: http
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+      name: http
   selector:
-      app: spa-dark
+    app: spa-dark
